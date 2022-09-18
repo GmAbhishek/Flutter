@@ -47,9 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
   // contacts = await FlutterContacts.getContacts(
     //  withProperties: true, withPhoto: true);
 
-    Contact c1= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c1= Contact.fromVCard('BEGIN:VCARD\n'
+
         'VERSION:4.0\n'
-        'NAme:AAKASH\n'
+        'firstName:AAKASH\n'
         'TITLE:727821TUIT001\n'
         'BDAY:29.03.2003\n'
         'COMPANY:SKCT\n'
@@ -59,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'FN:AAKASH S\n'
         'REV:1663433897219\n'
     );
-    Contact c2 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c2= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:AARTHI\n'
         'TITLE:727821TUIT002\n'
@@ -72,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897219\n'
         'END:VCARD\n'
     );
-    Contact c3 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c3= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:ABHIRAM\n'
         'TITLE:727821TUIT003\n'
@@ -85,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897219\n'
         'END:VCARD\n'
     );
-    Contact c4 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c4= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:Gm_Abhishek\n'
         'TITLE:727821TUIT004\n'
@@ -98,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897219\n'
         'END:VCARD\n'
     );
-    Contact c5 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c5= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:ABHISHEK.P\n'
         'TITLE:727821TUIT005\n'
@@ -111,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c6 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c6= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:ABI\n'
         'TITLE:727821TUIT006\n'
@@ -124,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c7 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c7= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'firstName:AKILESHKRISHNAN\n'
         'TITLE:727821TUIT007\n'
@@ -137,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c8 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c8= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:AKSHAYA\n'
         'TITLE:727821TUIT008\n'
@@ -150,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c9 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c9= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:ANILVIKASH\n'
         'TITLE:727821TUIT009\n'
@@ -163,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c10 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c10= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:ARAVIND\n'
         'TITLE:727821TUIT010\n'
@@ -176,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c11 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c11= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:ARCHANA\n'
         'TITLE:727821TUIT011\n'
@@ -189,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c12 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c12= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:ASMITHA\n'
         'TITLE:727821TUIT012\n'
@@ -202,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c13 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c13= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:ATHIF\n'
         'TITLE:727821TUIT013\n'
@@ -215,7 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c14 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c14= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:AVINASH KUMAR\n'
         'TITLE:727821TUIT014\n'
@@ -228,7 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c15= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c15= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:BALAJI\n'
         'TITLE:727821TUIT015\n'
@@ -241,7 +242,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c16= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c16= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:BARATH\n'
         'TITLE:727821TUIT016\n'
@@ -254,7 +255,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c17= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c17= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:DHANISH\n'
         'TITLE:727821TUIT017\n'
@@ -267,7 +268,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c18= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c18= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:DHARSINE\n'
         'TITLE:727821TUIT018\n'
@@ -280,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c19=Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c19= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:DHIVYADHARSHNI\n'
         'TITLE:727821TUIT019\n'
@@ -293,7 +294,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c20= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c20= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:DHRISHA KRISHNA\n'
         'TITLE:727821TUIT020\n'
@@ -306,7 +307,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c21 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c21= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:GOVENDHIRAN\n'
         'TITLE:727821TUIT021\n'
@@ -319,7 +320,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897220\n'
         'END:VCARD\n'
     );
-    Contact c22 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c22= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:GOWTHAM\n'
         'TITLE:727821TUIT022\n'
@@ -332,7 +333,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c23 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c23= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:GUGAN\n'
         'TITLE:727821TUIT023\n'
@@ -345,7 +346,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c24 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c24= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST: GUGAN\n'
         'TITLE:727821TUIT024\n'
@@ -358,7 +359,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c25 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c25= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:GURUPRASATH\n'
         'TITLE:727821TUIT025\n'
@@ -371,7 +372,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c26 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c26= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HARI VISHNU\n'
         'TITLE:727821TUIT026\n'
@@ -384,7 +385,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c27 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c27= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HARIHARAN.A(27)\n'
         'TITLE:727821TUIT027\n'
@@ -397,7 +398,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c28 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c28= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HARIHARAN.M(28)\n'
         'TITLE:727821TUIT028\n'
@@ -410,7 +411,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c29 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c29= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HARIHARAN.M(29)\n'
         'TITLE:727821TUIT029\n'
@@ -423,7 +424,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c30 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c30= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HARI KRISHNAN\n'
         'TITLE:727821TUIT030\n'
@@ -436,7 +437,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c31 = Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c31= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HARISH KUMAR\n'
         'TITLE:727821TUIT031\n'
@@ -449,7 +450,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c32= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c32= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HARISH.M\n'
         'TITLE:727821TUIT032\n'
@@ -462,7 +463,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c33= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c33= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HARISH RAGAVENDRA\n'
         'TITLE:727821TUIT033\n'
@@ -475,7 +476,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c34= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c34= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HEMAHARSHINI\n'
         'TITLE:727821TUIT035\n'
@@ -488,7 +489,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c35= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c35= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:HEMALATHAA\n'
         'TITLE:727821TUIT036\n'
@@ -501,7 +502,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c36= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c36= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:IBRAHIM\n'
         'TITLE:727821TUIT037\n'
@@ -514,7 +515,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c37= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c37= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:INBASRI\n'
         'TITLE:727821TUIT038\n'
@@ -527,7 +528,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c38= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c38= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:INDHU\n'
         'TITLE:727821TUIT039\n'
@@ -540,7 +541,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c39= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c39= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:INDHULEGA\n'
         'TITLE:727821TUIT040\n'
@@ -553,7 +554,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c40= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c40= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:INIKA\n'
         'TITLE:727821TUIT041\n'
@@ -566,7 +567,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c41= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c41= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:JAMUNA\n'
         'TITLE:727821TUIT042\n'
@@ -579,7 +580,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897221\n'
         'END:VCARD\n'
     );
-    Contact c42= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c42= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:JEYAMUTHU\n'
         'TITLE:727821TUIT043\n'
@@ -592,7 +593,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897222\n'
         'END:VCARD\n'
     );
-    Contact c43= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c43= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:KABARTHINI\n'
         'TITLE:727821TUIT044\n'
@@ -605,7 +606,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897222\n'
         'END:VCARD\n'
     );
-    Contact c44= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c44= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:KABILA\n'
         'TITLE:727821TUIT045\n'
@@ -618,7 +619,7 @@ class _MyHomePageState extends State<MyHomePage> {
         'REV:1663433897222\n'
         'END:VCARD\n'
     );
-    Contact c45= Contact.fromVCard('BEGIN:VCARD\n'
+    Contact? c45= Contact.fromVCard('BEGIN:VCARD\n'
         'VERSION:4.0\n'
         'FIRST:KABILAN\n'
         'TITLE:727821TUIT046\n'
@@ -630,26 +631,243 @@ class _MyHomePageState extends State<MyHomePage> {
         'FN:KABILAN V\n'
         'REV:1663433897222\n'
         'END:VCARD\n'
-    ); /*
-    Contact c46= Contact.fromVCard();
-    Contact c47= Contact.fromVCard();
-    Contact c48= Contact.fromVCard();
-    Contact c49= Contact.fromVCard();
-    Contact c50= Contact.fromVCard();
-    Contact c51= Contact.fromVCard();
-    Contact c52 = Contact.fromVCard();
-    Contact c53= Contact.fromVCard();
-    Contact c54= Contact.fromVCard();
-    Contact c55= Contact.fromVCard();
-    Contact c56= Contact.fromVCard();
-    Contact c57= Contact.fromVCard();
-    Contact c58= Contact.fromVCard();
-    Contact c59= Contact.fromVCard();
-    Contact c60= Contact.fromVCard();
-    Contact c61= Contact.fromVCard();
-    Contact c62= Contact.fromVCard();
-    Contact c63= Contact.fromVCard();*/
-    contacts=[c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,c37,c38,c39,c40,c41,c42,c43,c44,c45/*,c46,c47,c48,c49,c50,c51,c52,c53,c54,c55,c56,c57,c58,c59,c60,c61,c62,c63*/];
+    );
+    Contact? c46= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:KARTHICK\n'
+        'TITLE:727821TUIT047\n'
+        'BDAY:03.06.2000\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9080596570\n'
+        'LAST:V\n'
+        'EMAIL:727821utit047@skct.edu.in\n'
+        'FN:KARTHICK V\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c47= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:KATHYAYINI\n'
+        'TITLE:727821TUIT048\n'
+        'BDAY:02.02.2004\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9361616663\n'
+        'LAST:B\n'
+        'EMAIL:727821utit048@skct.edu.in\n'
+        'FN:KATHYAYINI B\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c48= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:KAVINKUMAR\n'
+        'TITLE:727821TUIT049\n'
+        'BDAY:06.10.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9585314473\n'
+        'LAST:K\n'
+        'EMAIL:727821tuit049@skct.edu.in\n'
+        'FN:KAVINKUMAR K\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c49= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:KAVIN\n'
+        'TITLE:727821TUIT050\n'
+        'BDAY:12.08.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9363100955\n'
+        'LAST:T\n'
+        'EMAIL:727821tuit050@skct.edu.in\n'
+        'FN:KAVIN T\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c50= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:KRITHIKA\n'
+        'TITLE:727821TUIT051\n'
+        'BDAY:28.07.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9495408971\n'
+        'LAST:M\n'
+        'EMAIL:727821tuit051@skct.edu.in\n'
+        'FN:KRITHIKA M\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c51= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:LAVANYA\n'
+        'TITLE:727821TUIT052\n'
+        'BDAY:25.06.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9894533060\n'
+        'LAST:S.B\n'
+        'EMAIL:727821tuit052@skct.edu.in\n'
+        'FN:LAVANYA S.B\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c52= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MAADHESH KUMAR\n'
+        'TITLE:727821TUIT053\n'
+        'BDAY:31.07.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9360230530\n'
+        'LAST:S\n'
+        'EMAIL:727821tuit053@skct.edu.in\n'
+        'FN:MAADHESH KUMAR S\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c53= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MADHAVAN\n'
+        'TITLE:727821TUIT054\n'
+        'BDAY:06.01.2004\n'
+        'COMPANY:SKCT\n'
+        'PHONE:8098313708\n'
+        'LAST:V\n'
+        'EMAIL:727821tuit054@skct.edu.in\n'
+        'FN:MADHAVAN V\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c54= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MAHESH BOOPATHI\n'
+        'TITLE:727821TUIT055\n'
+        'BDAY:14.12.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9360246064\n'
+        'LAST:A,P\n'
+        'EMAIL:727821tuit055@skct.edu.in\n'
+        'FN:MAHESH BOOPATHI A,P\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c55= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MAHISA\n'
+        'TITLE:727821TUIT056\n'
+        'BDAY:04.07.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9994070522\n'
+        'LAST:P\n'
+        'EMAIL:727821tuti056@skct.edu.in\n'
+        'FN:MAHISA P\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c56= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MANOJ KUMAR\n'
+        'TITLE:727821TUIT057\n'
+        'BDAY:25.09.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9025721893\n'
+        'LAST:N\n'
+        'EMAIL:727821tuit057@skct.edu.in\n'
+        'FN:MANOJ KUMAR N\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c57= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MIDHUN\n'
+        'TITLE:727821TUIT058\n'
+        'BDAY:21.10.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9342292016\n'
+        'LAST:J\n'
+        'EMAIL:727821tuit058@skct.edu.in\n'
+        'FN:MIDHUN J\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c58= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MITHRAN\n'
+        'TITLE:727821TUIT059\n'
+        'BDAY:09.11.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:6374104177\n'
+        'LAST:J\n'
+        'EMAIL:727821tuti059@skct.edu.in\n'
+        'FN:MITHRAN J\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c59= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MOHAMED NOUFAL ANSARI\n'
+        'TITLE:727821TUIT060\n'
+        'BDAY:14.04.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9488137939\n'
+        'LAST:T\n'
+        'EMAIL:727821tuit060@skct.edu.in\n'
+        'FN:MOHAMED NOUFAL ANSARI T\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c60= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:MOHANKUMAR\n'
+        'TITLE:727821TUIT061\n'
+        'BDAY:06.03.2004\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9043414621\n'
+        'LAST:M\n'
+        'EMAIL:727821tuit061@skct.edu.in\n'
+        'FN:MOHANKUMAR M\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c61= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:ARUL SANKARAN\n'
+        'TITLE:727821TUIT062\n'
+        'BDAY:28.09.2003\n'
+        'COMPANY:SKCT\n'
+        'PHONE:6379710906\n'
+        'LAST:D\n'
+        'EMAIL:727821tuit062@skct.edu.in\n'
+        'FN:ARUL SANKARAN D\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c62= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:DEEPAK\n'
+        'TITLE:727821TUIT063\n'
+        'BDAY:13.03.2002\n'
+        'COMPANY:SKCT\n'
+        'PHONE:8248756701\n'
+        'LAST:N\n'
+        'EMAIL:727821tuit063@skct.edu.in\n'
+        'FN:DEEPAK N\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    Contact? c63= Contact.fromVCard('BEGIN:VCARD\n'
+        'VERSION:4.0\n'
+        'FIRST:NADAR JENISON SHEKHAR\n'
+        'TITLE:727821TUIT064\n'
+        'BDAY:10.06.2002\n'
+        'COMPANY:SKCT\n'
+        'PHONE:9022003807\n'
+        'EMAIL:727821tuit064@skct.edu.in\n'
+        'FN:NADAR JENISON SHEKHAR\n'
+        'REV:1663433897222\n'
+        'END:VCARD\n'
+    );
+    contacts=[c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,c37,c38,c39,c40,c41,c42,c43,c44,c45,c46,c47,c48,c49,c50,c51,c52,c53,c54,c55,c56,c57,c58,c59,c60,c61,c62,c63];
+   // Contact? x = contacts?.elementAt(0);
+    //print(x);
        print(contacts);
       setState(() {});
     }
