@@ -261,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   onPressed: () {
                                     result = valueText.split('Greetings');
                                     for (var i = contacts.length-1; i >=0; i--) {
-                                      _displayTextInputDialog(context,contacts[i].stu_num,result[i+1]);
+                                      _displayTextInputDialog(context,contacts[i].par_num,result[i+1]);
                                     }
                                        // launch('https:/wa.me/${contacts[i].par_num}?text=Greetings+${result[i]}');
 
