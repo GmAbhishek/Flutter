@@ -439,7 +439,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         ],
                         ),**/
-                    style: GoogleFonts.jacquesFrancoisShadow(
+                    style: GoogleFonts.gafata(
                       fontSize: 28,
                       fontWeight: FontWeight.w400,
                       color: Color.fromRGBO(47, 48, 48, 1),
