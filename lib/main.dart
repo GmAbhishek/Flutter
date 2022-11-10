@@ -300,7 +300,7 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           : null,
 
-      /*TextFormField(
+      /****TextFormField(
                   onChanged: (value) {
                     setState(() {
                       valueText = value;
@@ -314,11 +314,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           valueText = "";
                         },
                         icon: Icon(Icons.cancel_outlined)),
-                    /*Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [IconButton(onPressed: (){valueText = "";}, icon: Icon(Icons.cancel_outlined)), Text(" "),],
-                      ),*/
-                    suffixIcon: Row(
+                                        suffixIcon: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         IconButton(
