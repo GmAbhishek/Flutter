@@ -1,4 +1,4 @@
-package com.it_a_contacts
+package com.call.app
 
 import io.flutter.embedding.android.FlutterActivity
 

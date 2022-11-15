@@ -1,27 +1,27 @@
+import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Contacts_remastered.dart';
-import 'dart:developer';
-//import 'package:flutter_sms/flutter_sms.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'package:whatsapp/whatsapp.dart';
+
 void main() async {
   runApp(const MyApp());
 }
 
 Map<int, Color> color = {
-  50: Color.fromRGBO(48, 213, 200, .1),
-  100: Color.fromRGBO(48, 213, 200, .2),
-  200: Color.fromRGBO(200, 213, 255, .6),
-  300: Color.fromRGBO(48, 213, 200, .4),
-  400: Color.fromRGBO(48, 213, 200, .5),
-  500: Color.fromRGBO(48, 213, 200, .6),
-  600: Color.fromRGBO(48, 213, 200, .7),
-  700: Color.fromRGBO(48, 213, 200, .8),
-  800: Color.fromRGBO(48, 213, 200, .9),
-  900: Color.fromRGBO(48, 213, 200, 1),
+  50: Color.fromRGBO(0, 160, 255, .1),
+  100: Color.fromRGBO(0, 160, 255, .2),
+  200: Color.fromRGBO(0, 160, 255, .3),
+  300: Color.fromRGBO(0, 160, 255, .4),
+  400: Color.fromRGBO(0, 160, 255, .5),
+  500: Color.fromRGBO(0, 160, 255, .6),
+  600: Color.fromRGBO(0, 160, 255, .7),
+  700: Color.fromRGBO(0, 160, 255, .8),
+  800: Color.fromRGBO(0, 160, 255, .9),
+  900: Color.fromRGBO(0, 160, 255, 1),
 };
-MaterialColor colorCustom = MaterialColor(200, color);
+MaterialColor colorCustom = MaterialColor(500, color);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -48,165 +48,221 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-//var _url = "https://api.whatsapp.com/send?phone=91";
-
-/*void _launchURL(txt) async => await canLaunch(_url + txt)
-    ? await launch(_url + txt)
-    : throw 'Could not launch $_url';*/
-TextEditingController _textFieldController = TextEditingController();
-
 class _MyHomePageState extends State<MyHomePage> {
   set value(value) {}
-  bool selectingmode = false;
-  bool hellmode = false;
-  Future<void> _displayTextInputDialog(BuildContext context,String _con,String _res) async {
+  bool selecting_mode = false;
+  int flag =1;
+
+  void warn_Box(BuildContext context)
+    async {
+      return showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+                title: Text('Warning', style: TextStyle(color: Colors.red)),
+            content: const Text("Kindly provide input for all selected Contacts"),
+                actions: <Widget>[TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.black,
+                    padding: const EdgeInsets.all(12.0),
+                    textStyle: const TextStyle(fontSize: 16),
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('OK'),
+                ),],
+            );
+          },
+      );
+  }
+  Future<Future> _displayTextInputDialog(
+      BuildContext context, String _con, String _res,int i) async {
     return showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Confirm'),
+            title: Text('Send to ${contacts[i].name} Parent'),
             content: const Text("Kindly close all other Whatsapp sessions"),
             actions: <Widget>[
-              TextButton(
-                style: TextButton.styleFrom(
-                  primary: Colors.green, // Text Color
+              ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned.fill(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Colors.purple,
+                              Colors.deepPurpleAccent,
+                              Colors.deepPurple,
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.all(12.0),
+                        textStyle: const TextStyle(fontSize: 16),
+                      ),
+                      onPressed: () {
+                        flag =0;
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Cancel All'),
+                    ),
+                  ],
                 ),
-                child: Text('Send'),
-                onPressed: () {
-                  setState(() {
-                    Navigator.pop(context);
-                    launch(
-                       'https://api.whatsapp.com/send?phone=91${_con}&text=Greetings+${_res}');
-                       // 'https:/wa.me/${_con}?text=Greetings+${_res}');
-                  });
-                },
               ),
-             /* ElevatedButton(
-                style: TextButton.styleFrom(
-                  primary: Colors.green, // Text Color
+              ClipRRect(
+                borderRadius: BorderRadius.circular(3),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned.fill(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Colors.red,
+                              Colors.redAccent,
+                              Colors.deepOrange,
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.all(12.0),
+                        textStyle: const TextStyle(fontSize: 16),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Cancel'),
+                    ),
+                  ],
                 ),
-                child: Text('OK'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  launch(
-                      'https:/wa.me/${_con}?text=Greetings+${_res}');
-                },
               ),
-*/
+              ClipRRect(
+                borderRadius: BorderRadius.circular(3),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned.fill(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color.fromRGBO(29, 160, 108, 1),
+                              Color.fromRGBO(29, 160, 108, 0.8),
+                              Color.fromRGBO(29, 160, 108, 0.6),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.black,
+                        padding: const EdgeInsets.all(12.0),
+                        textStyle: const TextStyle(fontSize: 16),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          Navigator.pop(context);
+                          launchUrl(Uri.parse(
+                              'https://api.whatsapp.com/send?phone=91${_con}&text=${_res}'));
+                        });
+                      },
+                      child: const Text('Send'),
+                    ),
+                  ],
+                ),
+              ),
             ],
           );
         });
   }
-/*  void showAlert(String _con,String _res) async {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text("Confirm"),
-            content: const Text("Kindly close all other Whatsapp sessions"),
-            actions: [
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    launch(
-                        'https:/wa.me/+91${_con}?text=Greetings+${_res}');
-                  },
-                  child: const Text("OK"))
-            ],
-          );
-        });
-  }*/
-
-  /*void getContact() async {
-    if (await FlutterContacts.requestPermission()) {
-      contacts;
-      print(contacts);
-      setState(() {});
-    }
-  }*/
-
-  /*void _sendSMS(String message, List<String> recipents) async {
-    String _result = await sendSMS(message: message, recipients: recipents)
-        .catchError((onError) {
-      print(onError);
-    });
-    print(_result);
-  }*/
 
   int count = 0;
-  String valueText = "";
-
-  //var whatsappUrl = "whatsapp://send?phone=${"+91"}";
+  static const def_pad = 20.0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        leading: selectingmode
-            ? IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new),
-                onPressed: () {
-                  setState(() {
-                    selectingmode = false;
-                    contacts.forEach((p) => p.selected = false);
-                  });
-                },
-              )
-            : null,
-        title: const Text(
-          "II IT-A Contacts",
-          style: TextStyle(
-            shadows: <Shadow>[
-              Shadow(
-                offset: Offset(5.0, 2.0),
-                blurRadius: 8.0,
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-              Shadow(
-                offset: Offset(5.0, -.0),
-                blurRadius: 5.0,
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-            ],
-            fontSize: 36,
-            fontFamily: 'Booter-Zero-zero',
-            fontWeight: FontWeight.w700,
-            color: Color.fromARGB(255, 0, 0, 0),
-          ),
-        ),
-        backgroundColor: Color.fromRGBO(0, 213, 200, .6),
-        actions: selectingmode
-            ? <Widget>[
-                IconButton(
-                  icon: Icon(
-                    Icons.check_circle_rounded,
-                    size: 36,
-                  ),
-                  color: Color.fromRGBO(93, 97, 97, 1),
+          centerTitle: true,
+          leading: selecting_mode
+              ? IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new),
                   onPressed: () {
+                    x=0;
+                    textarea.clear();
+                    result.clear();
                     setState(() {
-                      for (int i = 0; i < contacts.length; i++)
-                        if (contacts[i].selected) count++;
-                      if (count == contacts.length) {
-                        contacts.forEach((p) => p.selected = false);
-                      } else {
-                        contacts.forEach((p) => p.selected = true);
-                      }
-                      count = 0;
+                      selecting_mode = false;
+                      contacts.forEach((p) => p.selected = false);
                     });
                   },
-                ),
-              ]
-            : null,
-      ),
-
-      bottomNavigationBar: selectingmode
+                )
+              : null,
+          title: const Text(
+            "II IT-A Contacts",
+            style: TextStyle(
+              fontSize: 42,
+              fontWeight: FontWeight.w700,
+              color: Color.fromARGB(255, 0, 0, 0),
+            ),
+          ),
+          backgroundColor: Color.fromRGBO(0, 160, 255, .7),
+          actions: selecting_mode?
+              <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.yellowAccent,
+                padding: const EdgeInsets.all(20.0),
+                textStyle: const TextStyle(fontSize: 24),
+              ),
+              onPressed: () {},
+              child: Text("${x}"),
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.check_circle_rounded,
+                size: 36,
+              ),
+              padding: const EdgeInsets.fromLTRB(0, 0, 5, 4),
+              color: Color.fromRGBO(93, 97, 97, 1),
+              onPressed: () {
+                num++;
+                if (num >= 1) x = 0;
+                selecting_mode;
+                setState(() {
+                  for (int i = 0; i < contacts.length; i++)
+                    if (contacts[i].selected) count++;
+                  if (count == contacts.length) {
+                    contacts.forEach((p) => p.selected = false);
+                  } else {
+                    contacts.forEach((p) => p.selected = true);
+                  }
+                  count = 0;
+                  for (int i = 0; i < contacts.length; i++)
+                    if (contacts[i].selected) x++;
+                });
+              },
+            ),
+          ]:null,),
+      bottomNavigationBar: selecting_mode
           ? BottomAppBar(
               child: Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: kDefaultPadding,
-                  vertical: kDefaultPadding / 2,
+                  horizontal: def_pad,
+                  vertical: def_pad / 2,
                 ),
                 decoration: BoxDecoration(
                   color: Theme.of(context).scaffoldBackgroundColor,
@@ -225,13 +281,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           icon: Icon(Icons.clear_outlined),
                           onPressed: () {
                             textarea.clear();
-                            valueText = "";
+                            result.clear();
                           }),
-                      SizedBox(width: kDefaultPadding),
+                      SizedBox(width: def_pad),
                       Expanded(
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: kDefaultPadding * 0.75,
+                            horizontal: def_pad * 0.75,
                           ),
                           decoration: BoxDecoration(
                             color:
@@ -240,7 +296,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           child: Row(
                             children: [
-                              SizedBox(width: kDefaultPadding / 4),
+                              SizedBox(width: def_pad / 4),
                               Expanded(
                                 child: TextField(
                                   controller: textarea,
@@ -250,45 +306,40 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   onChanged: (value) {
                                     setState(() {
-                                      valueText = value;
+                                      result = value.split('Thanks');
+                                      //valueText = value;
                                     });
-                                    // result = value.split('Greetings');
                                   },
                                 ),
                               ),
                               IconButton(
                                   icon: Icon(Icons.send),
-                                  onPressed: () {
-                                    result = valueText.split('Greetings');
-                                    for (var i = contacts.length-1; i >=0; i--) {
-                                      _displayTextInputDialog(context,contacts[i].par_num,result[i+1]);
-                                    }
-                                       // launch('https:/wa.me/${contacts[i].par_num}?text=Greetings+${result[i]}');
-
-                                    /* messageGroup.add(contacts[i].par_num);
+                                  onPressed: () async {
+                                    //result = valueText.split('Thanks');
+                                    log(result.toString());
+                                    log(result.length.toString());
+                                    for (var i = 0;
+                                        i < contacts.length;
+                                        i++)
+                                      contacts[i].selected
+                                          ? messageGroup
+                                              .add(contacts[i].stu_num)
+                                          : null;
+                                    if(messageGroup.length==result.length)
+                                    for (var i = 0;
+                                    i < contacts.length;
+                                    i++) {
+                                      await  _displayTextInputDialog(context,
+                                            messageGroup[i], result[i],i);
+                                      if(flag ==0)
+                                        break;
+                                       }
                                     else
-                                        messageGroup.add("");
-                                    for (int i = 0; i < messageGroup.length; i++)*/
-                                    //launch('whatsapp://send?phone=91${messageGroup[i]}'+"&text=${Uri.encodeComponent(_messageController.text)}");
-                                    /* for(int i=0;i<contacts.length;i++)// {
-                                      finalmessage.add(messageGroup[i]);*/
-                                    /*  _sendSMS(
-                                        "$valueText",
-                                        // "$valueText",
-                                        //"Hey !! This is just a Test Msg😁 \n \t \t \t --Gm_Abhishek💫 ",
-                                    messageGroup);
-                                    //}*/
+                                      warn_Box(context);
+                                       flag = 1;
                                     messageGroup.clear();
                                   }),
-                              /*Icon(
-                      Icons.send,
-                      color: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .color!
-                          .withOpacity(0.64),
-                    ),*/
-                              SizedBox(width: kDefaultPadding / 4),
+                              SizedBox(width: def_pad / 4),
                             ],
                           ),
                         ),
@@ -299,107 +350,23 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             )
           : null,
-
-      /****TextFormField(
-                  onChanged: (value) {
-                    setState(() {
-                      valueText = value;
-                    });
-                  },
-                  controller: _controller,
-                  decoration: InputDecoration(
-                    hintText: "Enter your message here",
-                    prefixIcon: IconButton(
-                        onPressed: () {
-                          valueText = "";
-                        },
-                        icon: Icon(Icons.cancel_outlined)),
-                                        suffixIcon: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                            icon: Icon(Icons.send),
-                            onPressed: () {
-                              for (int i = 0; i < contacts.length; i++)
-                                if (contacts[i].selected)
-                                  messageGroup.add(contacts[i].par_num);
-                              _sendSMS(
-                                  " $valueText",
-                                  //"Hey !! This is just a Test Msg😁 \n \t \t \t --Gm_Abhishek💫 ",
-                                  messageGroup);
-                              messageGroup.clear();
-                            }),
-                        Icon(Icons.send)
-                      ],
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                        width: 1,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 1),
-                    ),
-                  ),
-                ), */ /**TextField(
-        onChanged: (value) {
-        setState(() {
-        valueText = value;
-        });
-        },
-        controller: _controller,
-        decoration: InputDecoration(
-        prefixIcon: IconButton(onPressed: (){valueText = "";}, icon: Icon(Icons.cancel_outlined)),
-        suffixIcon:IconButton(onPressed: () {
-        for (int i = 0; i < contacts.length; i++)
-        if (contacts[i].selected)
-        messageGroup.add(contacts[i].par_num);
-        _sendSMS(
-        " $valueText",
-        //"Hey !! This is just a Test Msg😁 \n \t \t \t --Gm_Abhishek💫 ",
-        messageGroup);
-        messageGroup.clear();
-        }, icon: Icon(Icons.send)) ,
-        hintText: "Enter your message here",
-        border: InputBorder.none,
-        ),
-        textInputAction: TextInputAction.newline,
-        textCapitalization: TextCapitalization.sentences,
-        ),
-                             ***/
-
-       /*floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: selectingmode
-            ? FloatingActionButton(
-                onPressed: () {
-                  var i=47;
-                  _displayTextInputDialog(context,contacts[i].stu_num,result[i]);
-                },
-                backgroundColor: Color.fromRGBO(0, 0, 0, 1),
-                child: Icon(
-                  Icons.chat,
-                  color: Color.fromRGBO(255, 255, 255, 1),
-                ),
-                elevation: 2.0,
-              )
-            : null,
-*/
       body: ListView.builder(
         itemCount: contacts.length,
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
-            onLongPress: () {
+            onLongPress: () { Timer(Duration(seconds: 1), () {
               setState(() {
-                selectingmode = true;
+                selecting_mode = true;
                 contacts[index].selected;
-              });
+              }); });
             },
             onTap: () {
               setState(() {
-                if (selectingmode) {
+                if (selecting_mode) {
                   contacts[index].selected = !contacts[index].selected;
-                  log(contacts[index].selected.toString());
+                  //log(contacts[index].selected.toString());
+                  if (contacts[index].selected ) x++;
+                  else x--;
                 }
               });
             },
@@ -407,34 +374,17 @@ class _MyHomePageState extends State<MyHomePage> {
               behavior: HitTestBehavior.opaque,
               onTap: () {
                 setState(() {
-                  if (selectingmode) {
+                  if (selecting_mode) {
                     contacts[index].selected = !contacts[index].selected;
-                    log(contacts[index].selected.toString());
+                    //log(contacts[index].selected.toString());
                   }
                 });
               },
               child: CircleAvatar(
                   radius: 24,
+                  backgroundColor: Color.fromRGBO(0, 160, 255, .5),
                   child: Text(
                     '${index + 1}',
-                    /**style: TextStyle(
-                        fontSize: 50,
-                        fontFamily: ,
-                        fontWeight: FontWeight.w600,
-                        color: Color.fromRGBO(47, 48, 48, 1),
-                        shadows: <Shadow>[
-                        Shadow(
-                        offset: Offset(2.0, 2.0),
-                        blurRadius: 5.0,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        ),
-                        Shadow(
-                        offset: Offset(2.0, 2.0),
-                        blurRadius: 2.0,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        ),
-                        ],
-                        ),**/
                     style: GoogleFonts.gafata(
                       fontSize: 28,
                       fontWeight: FontWeight.w400,
@@ -452,7 +402,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Color.fromRGBO(47, 48, 48, 1),
               ),
             ),
-            trailing: (selectingmode)
+            trailing: (selecting_mode)
                 ? ((contacts[index].selected)
                     ? Icon(Icons.check_box)
                     : Icon(Icons.check_box_outline_blank))
@@ -476,7 +426,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       return [
                         PopupMenuItem(
                           onTap: () {
-                            launch('tel: ${contacts[index].stu_num}');
+                            launchUrl(
+                              Uri(
+                                scheme: 'tel',
+                                path: contacts[index].stu_num,
+                              ),
+                            );
                           },
                           child: Text(
                             'Student: ${contacts[index].name}',
@@ -486,7 +441,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         PopupMenuItem(
                           onTap: () {
-                            launch('tel: ${contacts[index].par_num}');
+                            launchUrl(
+                              Uri(
+                                scheme: 'tel',
+                                path: contacts[index].par_num,
+                              ),
+                            );
                           },
                           child: Text(
                             'Parent:  ${contacts[index].parent}',

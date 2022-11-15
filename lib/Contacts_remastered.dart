@@ -77,8 +77,8 @@ class Details {
 
   Details(this.name, this.stu_num, this.parent, this.par_num);
 }
-
+int  x =0 ;
+int num =0;
 List<String> messageGroup = [];
 List<String> result = [];
-const kDefaultPadding = 20.0;
-var flag =0;
+//const kDefaultPadding = 20.0;

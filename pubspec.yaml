@@ -39,19 +39,18 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  flutter_contacts:
-  url_launcher:
+  flutter_contacts: ^1.1.5+1
+  change_app_package_name: ^1.1.0
+  url_launcher: ^6.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  change_app_package_name: ^1.1.0
   flutter_launcher_icons: "^0.10.0"
 flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "asset/icons/Gm.png"
-
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -88,10 +87,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Booter-Zero-zero
-      fonts:
-        - asset: asset/Font/Booter-Zero-zero.ttf
+  # fonts:
+  #    - family: Booter-Zero-zero
+  #      fonts:
+  #        - asset: asset/Font/Booter-Zero-zero.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
