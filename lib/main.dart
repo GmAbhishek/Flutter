@@ -51,7 +51,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   set value(value) {}
   bool selecting_mode = false;
-  int flag =1;
 
   void warn_Box(BuildContext context)
     async {
@@ -78,46 +77,22 @@ class _MyHomePageState extends State<MyHomePage> {
       );
   }
   Future<Future> _displayTextInputDialog(
-      BuildContext context, String _con, String _res,int i) async {
-    return showDialog(
+      BuildContext context, String _con, String _res) async {
+    String temp = "";
+    for(int i=0 ; i<contacts.length;i++)
+      {
+        if(contacts[i].stu_num==_con)
+          {
+            temp= contacts[i].name;
+          }
+      }
+    return await showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
-            title: Text('Send to ${contacts[i].name} Parent'),
+         return AlertDialog(
+            title: Text('Send to ${temp} Parent'),
             content: const Text("Kindly close all other Whatsapp sessions"),
             actions: <Widget>[
-              ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Stack(
-                  children: <Widget>[
-                    Positioned.fill(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Colors.purple,
-                              Colors.deepPurpleAccent,
-                              Colors.deepPurple,
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.all(12.0),
-                        textStyle: const TextStyle(fontSize: 16),
-                      ),
-                      onPressed: () {
-                        flag =0;
-                        Navigator.pop(context);
-                      },
-                      child: const Text('Cancel All'),
-                    ),
-                  ],
-                ),
-              ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(3),
                 child: Stack(
@@ -214,8 +189,8 @@ class _MyHomePageState extends State<MyHomePage> {
           title: const Text(
             "II IT-A Contacts",
             style: TextStyle(
-              fontSize: 42,
-              fontWeight: FontWeight.w700,
+              fontSize: 36,
+              fontWeight: FontWeight.w500,
               color: Color.fromARGB(255, 0, 0, 0),
             ),
           ),
@@ -314,30 +289,22 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               IconButton(
                                   icon: Icon(Icons.send),
-                                  onPressed: () async {
-                                    //result = valueText.split('Thanks');
-                                    log(result.toString());
-                                    log(result.length.toString());
-                                    for (var i = 0;
-                                        i < contacts.length;
-                                        i++)
-                                      contacts[i].selected
-                                          ? messageGroup
-                                              .add(contacts[i].stu_num)
-                                          : null;
+                                  onPressed: ()  {
+                                    messageGroup.clear();
+                                    for (var i = 0;i < contacts.length;i++)
+                                      contacts[i].selected? messageGroup.add(contacts[i].stu_num): null;
                                     if(messageGroup.length==result.length)
-                                    for (var i = 0;
-                                    i < contacts.length;
-                                    i++) {
-                                      await  _displayTextInputDialog(context,
-                                            messageGroup[i], result[i],i);
-                                      if(flag ==0)
-                                        break;
+                                    for (var i = 0;i < contacts.length;i++) {
+                                      _displayTextInputDialog(context,messageGroup[i], result[i]);
                                        }
                                     else
                                       warn_Box(context);
-                                       flag = 1;
-                                    messageGroup.clear();
+                                    log(result.toString());
+                                    log(messageGroup.toString());
+                                    log(messageGroup.length.toString());
+                                    log(result.length.toString());
+                                       result.clear();
+
                                   }),
                               SizedBox(width: def_pad / 4),
                             ],
@@ -364,7 +331,6 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 if (selecting_mode) {
                   contacts[index].selected = !contacts[index].selected;
-                  //log(contacts[index].selected.toString());
                   if (contacts[index].selected ) x++;
                   else x--;
                 }
@@ -376,7 +342,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 setState(() {
                   if (selecting_mode) {
                     contacts[index].selected = !contacts[index].selected;
-                    //log(contacts[index].selected.toString());
                   }
                 });
               },
