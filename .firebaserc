@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "contactsapp-f18e4"
-  }
+    "default": "ii-it-a-contacts"
+  },
+  "targets": {},
+  "etags": {}
 }

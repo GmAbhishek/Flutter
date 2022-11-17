@@ -117,7 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         textStyle: const TextStyle(fontSize: 16),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
+                        //Navigator.pop(context);
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyHomePage()),
+                              (Route<dynamic> route) => false,
+                        );
                       },
                       child: const Text('Cancel'),
                     ),
